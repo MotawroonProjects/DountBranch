@@ -49,21 +49,21 @@ public class CurrentOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         myHolder.binding.setModel(list.get(position));
 
 
-        myHolder.binding.btnDetails.setOnClickListener(v -> {
-            if (fragment instanceof FragmentHome) {
-                FragmentHome fragmentHome = (FragmentHome) fragment;
-                fragmentHome.showDetails(list.get(myHolder.getAdapterPosition()));
-
-            }
-        });
-
-        myHolder.binding.flCancel.setOnClickListener(v -> {
-            if (fragment instanceof FragmentHome) {
-                FragmentHome fragmentHome = (FragmentHome) fragment;
-                fragmentHome.cancel(list.get(myHolder.getAdapterPosition()),myHolder.getAdapterPosition());
-
-            }
-        });
+//        myHolder.binding.btnDetails.setOnClickListener(v -> {
+//            if (fragment instanceof FragmentHome) {
+//                FragmentHome fragmentHome = (FragmentHome) fragment;
+//                fragmentHome.showDetails(list.get(myHolder.getAdapterPosition()));
+//
+//            }
+//        });
+//
+//        myHolder.binding.flCancel.setOnClickListener(v -> {
+//            if (fragment instanceof FragmentHome) {
+//                FragmentHome fragmentHome = (FragmentHome) fragment;
+//                fragmentHome.cancel(list.get(myHolder.getAdapterPosition()),myHolder.getAdapterPosition());
+//
+//            }
+//        });
 
     }
 

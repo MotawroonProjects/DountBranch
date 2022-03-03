@@ -7,7 +7,7 @@
 
         <variable
             name="contactModel"
-            type="dount_branch.model.ContactUsModel" />
+            type="com.apps.dount_branch.model.ContactUsModel" />
 
     </data>
 

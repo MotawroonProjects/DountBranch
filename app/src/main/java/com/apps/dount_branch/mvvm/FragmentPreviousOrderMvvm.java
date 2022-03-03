@@ -58,11 +58,11 @@ public class FragmentPreviousOrderMvvm extends AndroidViewModel {
     public void setFilterBy(String filter){
         getFilterBy().setValue(filter);
     }
-    public void getOrder(String user_token, String filterBy) {
+    public void getOrder(String user_token) {
         isLoadingLivData.setValue(true);
 
         Api.getService(Tags.base_url)
-                .getPreviousOrders(user_token, filterBy)
+                .getPreviousOrders(user_token)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<Response<OrderDataModel>>() {

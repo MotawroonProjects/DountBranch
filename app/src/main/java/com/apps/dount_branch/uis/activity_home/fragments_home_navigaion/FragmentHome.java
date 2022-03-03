@@ -121,8 +121,8 @@ public class FragmentHome extends BaseFragment {
         binding.recView.setLayoutManager(new LinearLayoutManager(activity));
         binding.recView.setAdapter(adapter);
 
-        fragmentHomeMvvm.getOrder(getUserModel().getData().getUser().getId());
-        binding.swipeRefresh.setOnRefreshListener(() -> fragmentHomeMvvm.getOrder(getUserModel().getData().getUser().getId()));
+        fragmentHomeMvvm.getOrder(getUserModel());
+        binding.swipeRefresh.setOnRefreshListener(() -> fragmentHomeMvvm.getOrder(getUserModel()));
 
         getParentFragmentManager().setFragmentResultListener("key1", this, (requestKey, result) -> {
             boolean isOrderEnded = result.getBoolean("isEnded");

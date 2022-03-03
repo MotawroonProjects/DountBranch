@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="dount_branch.model.OrderModel" />
+            type="com.apps.dount_branch.model.OrderModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -140,7 +140,7 @@
 
                         <fragment
                             android:id="@+id/mapTo2"
-                            android:name="dount_branch.uis.FragmentMapTouchListener"
+                            android:name="com.apps.dount_branch.uis.FragmentMapTouchListener"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" />
 

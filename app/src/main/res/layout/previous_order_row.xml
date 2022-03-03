@@ -5,7 +5,7 @@
     <data>
         <variable
             name="model"
-            type="dount_branch.model.OrderModel" />
+            type="com.apps.dount_branch.model.OrderModel" />
     </data>
 
     <androidx.cardview.widget.CardView

@@ -2,6 +2,7 @@ package com.apps.dount_branch.model;
 
 import android.content.Context;
 import android.util.Log;
+import android.util.Patterns;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -13,42 +14,51 @@ import com.apps.dount_branch.R;
 import java.io.Serializable;
 
 public class LoginModel extends BaseObservable implements Serializable {
-    private String username;
+    private String email;
     private String password;
-    public ObservableField<String> error_user_name = new ObservableField<>();
+    public ObservableField<String> error_email = new ObservableField<>();
     public ObservableField<String> error_password = new ObservableField<>();
 
     public LoginModel() {
-        username = "";
+        email = "";
         password = "";
     }
 
     public boolean isDataValid(Context context) {
-        if (!username.isEmpty() &&
-                password.length() >= 6) {
-            error_user_name.set(null);
+        if (!email.isEmpty() &&
+                Patterns.EMAIL_ADDRESS.matcher(email).matches()
+                &&!password.isEmpty()
+//                password.length() >= 6
+        ) {
+            error_email.set(null);
             error_password.set(null);
 
 
             return true;
         } else {
 
-            Log.e("dsds","dd");
-            if (username.isEmpty()) {
-                error_user_name.set(context.getString(R.string.field_required));
+          //  Log.e("dsds","dd");
+            if (email.isEmpty()) {
+                error_email.set(context.getString(R.string.field_required));
 
-            } else {
-                error_user_name.set(null);
+            }
+            else if( !Patterns.EMAIL_ADDRESS.matcher(email).matches() ){
+                error_email.set(context.getResources().getString(R.string.inv_email));
+            }
+            else {
+                error_email.set(null);
 
             }
 
             if (password.isEmpty()) {
                 error_password.set(context.getString(R.string.field_required));
 
-            } else if (password.length() < 6) {
-                error_password.set(context.getString(R.string.pass_short));
-
-            } else {
+            }
+//            else if (password.length() < 6) {
+//                error_password.set(context.getString(R.string.pass_short));
+//
+//            }
+            else {
                 error_password.set(null);
 
             }
@@ -59,12 +69,12 @@ public class LoginModel extends BaseObservable implements Serializable {
     }
 
     @Bindable
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
         notifyPropertyChanged(BR.username);
     }
 

@@ -62,11 +62,11 @@ public class FragmentHomeMvvm extends AndroidViewModel {
         return onRefused;
     }
 
-    public void getOrder(String user_id) {
+    public void getOrder(UserModel userModel) {
         isLoadingLivData.setValue(true);
 
         Api.getService(Tags.base_url)
-                .getCurrentOrders(user_id)
+                .getNewOrders(userModel.getData().getAccess_token())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<Response<OrderDataModel>>() {

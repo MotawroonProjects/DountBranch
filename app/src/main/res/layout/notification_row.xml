@@ -4,7 +4,7 @@
     <data>
         <variable
             name="model"
-            type="dount_branch.model.NotificationModel" />
+            type="com.apps.dount_branch.model.NotificationModel" />
     </data>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

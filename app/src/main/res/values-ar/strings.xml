@@ -95,5 +95,10 @@
     <string name="refused">رفض</string>
     <string name="end_order">إنهاء التوصيل</string>
     <string name="on_way">فى الطريق</string>
+    <string name="customer">عميل :</string>
+    <string name="payment_way">طريقة الدفع : </string>
+    <string name="electronic_payment">Electronic Payment</string>
+    <string name="cash">Cash</string>
+    <string name="wallet">Wallet</string>
 
 </resources>

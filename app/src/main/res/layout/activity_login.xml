@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="dount_branch.model.LoginModel" />
+            type="com.apps.dount_branch.model.LoginModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:text="@string/username"
+                    android:text="@string/email"
                     android:textColor="@color/white"
                     android:textSize="16sp"
 
@@ -102,16 +102,17 @@
 
                     <EditText
                         android:id="@+id/edtUserName"
-                        error="@{model.error_user_name}"
+                        error="@{model.error_email}"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/transparent"
-                        android:hint="@string/username"
+                        android:hint="@string/email"
                         android:lines="1"
-                        android:text="@={model.username}"
+                        android:text="@={model.email}"
                         android:textColor="@color/white"
                         android:textColorHint="@color/gray3"
                         android:textSize="14sp"
+                        android:inputType="textEmailAddress"
                         android:gravity="start|center_vertical"
                         android:textAlignment="viewStart"
 

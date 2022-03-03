@@ -32,8 +32,8 @@ public interface Service {
 
 
     @FormUrlEncoded
-    @POST("delivery/auth/login")
-    Single<Response<UserModel>> login(@Field("name") String name,
+    @POST("branch/auth/login")
+    Single<Response<UserModel>> login(@Field("email") String email,
                                       @Field("password") String password);
 
     @Multipart
@@ -95,12 +95,14 @@ public interface Service {
                                                              @Query(value = "user_id") String user_id
     );
 
-    @GET("delivery/orders/current_orders")
-    Single<Response<OrderDataModel>> getCurrentOrders(@Query(value = "user_id") String user_id);
+    @GET("branch/order/newOrders")
+    Single<Response<OrderDataModel>> getNewOrders(@Header("AUTHORIZATION") String token);
 
-    @GET("delivery/orders/previous_orders")
-    Single<Response<OrderDataModel>> getPreviousOrders(@Header("Authorization") String auth_token,
-                                                               @Query(value = "time") String time
+    @GET("branch/order/currentOrders")
+    Single<Response<OrderDataModel>> getCurrentOrders(@Header("AUTHORIZATION") String token);
+
+    @GET("branch/order/endedOrders")
+    Single<Response<OrderDataModel>> getPreviousOrders(@Header("Authorization") String auth_token
     );
 
     @GET("delivery/orders/order_details")

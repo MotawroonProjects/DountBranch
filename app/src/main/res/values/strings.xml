@@ -36,7 +36,6 @@
     <string name="confirmation_code">Confirmation code</string>
     <string name="field_required">field required</string>
     <string name="inv_email">invaled email</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search">Search...</string>
     <string name="rate_app">Rate App</string>
     <string name="settings">Settings</string>
@@ -95,5 +94,10 @@
     <string name="refused">Refused</string>
     <string name="end_order">End order</string>
     <string name="on_way">On Way</string>
+    <string name="customer">Customer : </string>
+    <string name="payment_way">Payment Way : </string>
+    <string name="electronic_payment">Electronic Payment</string>
+    <string name="cash">Cash</string>
+    <string name="wallet">Wallet</string>
 
 </resources>
