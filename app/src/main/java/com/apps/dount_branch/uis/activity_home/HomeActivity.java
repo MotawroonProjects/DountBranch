@@ -129,7 +129,11 @@ public class HomeActivity extends BaseActivity implements Listeners.Verification
 
             navController.navigate(R.id.fragmentPreviousReservation);
         });
+        binding.llCurrentOrder.setOnClickListener(v -> {
+            binding.drawerLayout.closeDrawer(GravityCompat.START);
 
+            navController.navigate(R.id.fragmentcurrent);
+        });
         binding.llLogout.setOnClickListener(v -> {
             binding.drawerLayout.closeDrawer(GravityCompat.START);
 

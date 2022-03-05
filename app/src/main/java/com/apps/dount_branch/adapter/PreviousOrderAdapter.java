@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.apps.dount_branch.R;
@@ -48,6 +49,10 @@ public class PreviousOrderAdapter extends RecyclerView.Adapter<RecyclerView.View
         MyHolder myHolder = (MyHolder) holder;
         myHolder.binding.setModel(list.get(position));
 
+        ProductAdapter productOrderAdapter = new ProductAdapter(context);
+        productOrderAdapter.updateList(list.get(position).getDetails());
+        myHolder.binding.recView.setLayoutManager(new LinearLayoutManager(context));
+        myHolder.binding.recView.setAdapter(productOrderAdapter);
 
     }
 

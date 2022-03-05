@@ -29,16 +29,16 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Response;
 
-public class FragmentHomeMvvm extends AndroidViewModel {
+public class FragmentCurrentMvvm extends AndroidViewModel {
     private static final String TAG = "FragmentHomeMvvm";
     private MutableLiveData<List<OrderModel>> onOrderDataSuccess;
     private MutableLiveData<Boolean> isLoadingLivData;
     private MutableLiveData<Boolean> onRefused;
-    private MutableLiveData<Boolean> onAccept;
+    private MutableLiveData<Boolean> onEnded;
 
     private CompositeDisposable disposable = new CompositeDisposable();
 
-    public FragmentHomeMvvm(@NonNull Application application) {
+    public FragmentCurrentMvvm(@NonNull Application application) {
         super(application);
     }
 
@@ -62,17 +62,18 @@ public class FragmentHomeMvvm extends AndroidViewModel {
         }
         return onRefused;
     }
-    public MutableLiveData<Boolean> onAccept() {
-        if (onAccept == null) {
-            onAccept = new MutableLiveData<>();
+    public MutableLiveData<Boolean> onEnded() {
+        if (onEnded == null) {
+            onEnded = new MutableLiveData<>();
         }
-        return onAccept;
+        return onEnded;
     }
+
     public void getOrder(UserModel userModel) {
         isLoadingLivData.setValue(true);
 
         Api.getService(Tags.base_url)
-                .getNewOrders(userModel.getData().getAccess_token())
+                .getCurrentOrders(userModel.getData().getAccess_token())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<Response<OrderDataModel>>() {
@@ -150,13 +151,13 @@ public class FragmentHomeMvvm extends AndroidViewModel {
                 });
 
     }
-    public void acceptOrder(Context context, UserModel userModel, String order_id) {
+    public void endOrder(Context context, UserModel userModel, String order_id) {
         ProgressDialog dialog = Common.createProgressDialog(context, context.getString(R.string.wait));
         dialog.setCanceledOnTouchOutside(false);
         dialog.setCancelable(false);
         dialog.show();
         Api.getService(Tags.base_url)
-                .acceptOrder(userModel.getData().getAccess_token(), order_id)
+                .endOrder(userModel.getData().getAccess_token(), order_id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<Response<StatusResponse>>() {
@@ -168,11 +169,11 @@ public class FragmentHomeMvvm extends AndroidViewModel {
                     @Override
                     public void onSuccess(@NonNull Response<StatusResponse> response) {
                         dialog.dismiss();
-
                         if (response.isSuccessful()) {
+
                             if (response.body() != null) {
                                 if (response.body().getStatus() == 200) {
-                                    onAccept.setValue(true);
+                                    onEnded.setValue(true);
                                 }
                             }
                         }

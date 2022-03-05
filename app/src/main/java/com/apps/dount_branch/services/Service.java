@@ -37,7 +37,7 @@ public interface Service {
                                       @Field("password") String password);
 
     @Multipart
-    @POST("delivery/representative/register")
+    @POST("branch/representative/register")
     Observable<Response<UserModel>> signUp(@Part("name") RequestBody name,
                                            @Part("phone_code") RequestBody phone_code,
                                            @Part("phone") RequestBody phone,
@@ -50,7 +50,7 @@ public interface Service {
     );
 
     @Multipart
-    @POST("delivery/representative/edit_profile")
+    @POST("branch/representative/edit_profile")
     Observable<Response<UserModel>> updateProfile(@Header("Authorization") String token,
                                                   @Part("name") RequestBody name,
                                                   @Part("vehicle_id") RequestBody vehicle_id,
@@ -62,35 +62,35 @@ public interface Service {
 
 
     @FormUrlEncoded
-    @POST("delivery/auth/logout")
+    @POST("branch/auth/logout")
     Single<Response<StatusResponse>> logout(@Header("Authorization") String token,
-                                            @Field("token") String phone_token
+                                            @Field("phone_token") String phone_token
 
 
     );
 
     @FormUrlEncoded
-    @POST("delivery/auth/insert_token")
+    @POST("branch/auth/insert_token")
     Single<Response<StatusResponse>> updateFirebaseToken(@Header("Authorization") String token,
-                                                         @Field("rev id") String rev_id,
-                                                         @Field("token") String phone_token,
+                                                         @Field("user_id") String user_id,
+                                                         @Field("phone_token") String phone_token,
                                                          @Field("type") String software_type
 
 
     );
 
     @FormUrlEncoded
-    @POST("delivery/contact_us")
+    @POST("branch/contact_us")
     Single<Response<StatusResponse>> contactUs(@Field("name") String name,
                                                @Field("email") String email,
                                                @Field("subject") String subject,
                                                @Field("message") String message);
 
 
-    @GET("delivery/representative/vehicles")
+    @GET("branch/representative/vehicles")
     Single<Response<VehicleDataModel>> getVehicles(@Header("lang") String lang);
 
-    @GET("delivery/notifications")
+    @GET("branch/notifications")
     Single<Response<NotificationDataModel>> getNotifications(@Header("AUTHORIZATION") String token,
                                                              @Query(value = "user_id") String user_id
     );
@@ -105,29 +105,29 @@ public interface Service {
     Single<Response<OrderDataModel>> getPreviousOrders(@Header("Authorization") String auth_token
     );
 
-    @GET("delivery/orders/order_details")
+    @GET("branch/orders/order_details")
     Single<Response<SingleOrderDataModel>> getOrderDetails(@Header("Authorization") String auth_token,
                                                            @Query(value = "order_id") String order_id
     );
 
     @FormUrlEncoded
-    @POST("delivery/orders/accept_order")
+    @POST("branch/order/acceptOrder")
     Single<Response<StatusResponse>> acceptOrder(@Header("Authorization") String auth_token,
                                                  @Field("order_id") String order_id
     );
     @FormUrlEncoded
-    @POST("delivery/orders/on_way_order")
+    @POST("branch/orders/on_way_order")
     Single<Response<StatusResponse>> orderOnWay(@Header("Authorization") String auth_token,
                                                  @Field("order_id") String order_id
     );
     @FormUrlEncoded
-    @POST("delivery/orders/cancel_order")
+    @POST("branch/order/cancelOrder")
     Single<Response<StatusResponse>> cancelOrder(@Header("Authorization") String auth_token,
                                                  @Field("order_id") String order_id
     );
 
     @FormUrlEncoded
-    @POST("delivery/orders/end_order")
+    @POST("branch/order/endOrder")
     Single<Response<StatusResponse>> endOrder(@Header("Authorization") String auth_token,
                                               @Field("order_id") String order_id
     );

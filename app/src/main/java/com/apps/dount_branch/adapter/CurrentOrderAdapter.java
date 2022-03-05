@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.apps.dount_branch.R;
 import com.apps.dount_branch.databinding.OrderRowBinding;
 import com.apps.dount_branch.model.OrderModel;
+import com.apps.dount_branch.uis.activity_home.fragments_home_navigaion.FragmentCurrent;
 import com.apps.dount_branch.uis.activity_home.fragments_home_navigaion.FragmentHome;
 
 import java.util.List;
@@ -48,7 +50,10 @@ public class CurrentOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         MyHolder myHolder = (MyHolder) holder;
         myHolder.binding.setModel(list.get(position));
 
-
+        ProductAdapter productOrderAdapter = new ProductAdapter(context);
+        productOrderAdapter.updateList(list.get(position).getDetails());
+        myHolder.binding.recView.setLayoutManager(new LinearLayoutManager(context));
+        myHolder.binding.recView.setAdapter(productOrderAdapter);
 //        myHolder.binding.btnDetails.setOnClickListener(v -> {
 //            if (fragment instanceof FragmentHome) {
 //                FragmentHome fragmentHome = (FragmentHome) fragment;
@@ -57,13 +62,28 @@ public class CurrentOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 //            }
 //        });
 //
-//        myHolder.binding.flCancel.setOnClickListener(v -> {
-//            if (fragment instanceof FragmentHome) {
-//                FragmentHome fragmentHome = (FragmentHome) fragment;
-//                fragmentHome.cancel(list.get(myHolder.getAdapterPosition()),myHolder.getAdapterPosition());
-//
-//            }
-//        });
+        myHolder.binding.btnAccept.setOnClickListener(v -> {
+            if (fragment instanceof FragmentHome) {
+                FragmentHome fragmentHome = (FragmentHome) fragment;
+                fragmentHome.accept(list.get(myHolder.getAdapterPosition()), myHolder.getAdapterPosition());
+
+            } else if (fragment instanceof FragmentCurrent) {
+                FragmentCurrent fragmentHome = (FragmentCurrent) fragment;
+                fragmentHome.endorder(list.get(myHolder.getAdapterPosition()), myHolder.getAdapterPosition());
+
+            }
+        });
+        myHolder.binding.btCancel.setOnClickListener(v -> {
+            if (fragment instanceof FragmentHome) {
+                FragmentHome fragmentHome = (FragmentHome) fragment;
+                fragmentHome.cancel(list.get(myHolder.getAdapterPosition()), myHolder.getAdapterPosition());
+
+            } else if (fragment instanceof FragmentCurrent) {
+                FragmentCurrent fragmentHome = (FragmentCurrent) fragment;
+                fragmentHome.cancel(list.get(myHolder.getAdapterPosition()), myHolder.getAdapterPosition());
+
+            }
+        });
 
     }
 

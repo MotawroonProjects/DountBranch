@@ -55,7 +55,7 @@ public class GeneralMethod {
                         RequestOptions options = new RequestOptions().override(view.getWidth(), view.getHeight());
                         Glide.with(view.getContext()).asBitmap()
                                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                .load(Tags.base_url+imageUrl)
+                                .load(Tags.IMAGE_Product_URL+imageUrl)
                                 .centerCrop()
                                 .apply(options)
                                 .into(imageView);
@@ -68,7 +68,7 @@ public class GeneralMethod {
                         RequestOptions options = new RequestOptions().override(view.getWidth(), view.getHeight());
                         Glide.with(view.getContext()).asBitmap()
                                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                .load(Tags.base_url+imageUrl)
+                                .load(Tags.IMAGE_Product_URL+imageUrl)
                                 .centerCrop()
                                 .apply(options)
                                 .into(imageView);
@@ -82,7 +82,7 @@ public class GeneralMethod {
                         RequestOptions options = new RequestOptions().override(view.getWidth(), view.getHeight());
                         Glide.with(view.getContext()).asBitmap()
                                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                .load(Tags.base_url+imageUrl)
+                                .load(Tags.IMAGE_Product_URL+imageUrl)
                                 .centerCrop()
                                 .apply(options)
                                 .into(imageView);

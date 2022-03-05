@@ -24,7 +24,7 @@
     <string name="privacy_policy">السياسة والخصوصية</string>
     <string name="contact_us">إتصل بنا</string>
     <string name="wait">إنتطر قليلا...</string>
-    <string name="current">الحالية</string>
+    <string name="current">الطلبات الحالية</string>
     <string name="prev">السابقة</string>
     <string name="choose_your_language">إختر اللغة</string>
     <string name="next">التالي</string>
@@ -96,9 +96,9 @@
     <string name="end_order">إنهاء التوصيل</string>
     <string name="on_way">فى الطريق</string>
     <string name="customer">عميل :</string>
-    <string name="payment_way">طريقة الدفع : </string>
+    <string name="payment_way">طريقة الدفع </string>
     <string name="electronic_payment">Electronic Payment</string>
-    <string name="cash">Cash</string>
+    <string name="cash">كاش</string>
     <string name="wallet">Wallet</string>
 
 </resources>

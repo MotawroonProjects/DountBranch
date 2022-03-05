@@ -8,33 +8,37 @@
 
     <fragment
         android:id="@+id/fragmentHome"
-        android:name="dount_branch.uis.activity_home.fragments_home_navigaion.FragmentHome"
+        android:name="com.apps.dount_branch.uis.activity_home.fragments_home_navigaion.FragmentHome"
         android:label=""
         tools:layout="@layout/fragment_home" />
 
 
     <fragment
         android:id="@+id/fragmentPreviousReservation"
-        android:name="dount_branch.uis.activity_home.fragments_home_navigaion.FragmentPreviousReservation"
+        android:name="com.apps.dount_branch.uis.activity_home.fragments_home_navigaion.FragmentPreviousReservation"
         android:label=""
         tools:layout="@layout/fragment_previous_reservation" />
 
     <fragment
         android:id="@+id/fragmentLanguage"
-        android:name="dount_branch.uis.activity_home.fragments_app.FragmentLanguage"
+        android:name="com.apps.dount_branch.uis.activity_home.fragments_app.FragmentLanguage"
         android:label=""
         tools:layout="@layout/fragment_language" />
 
     <fragment
         android:id="@+id/fragmentContactUs"
-        android:name="dount_branch.uis.activity_home.fragments_app.FragmentContactUs"
+        android:name="com.apps.dount_branch.uis.activity_home.fragments_app.FragmentContactUs"
         android:label=""
         tools:layout="@layout/fragment_contact_us" />
 
     <fragment
         android:id="@+id/fragmentOrderDetails"
-        android:name="dount_branch.uis.activity_home.fragments_app.FragmentOrderDetails"
+        android:name="com.apps.dount_branch.uis.activity_home.fragments_app.FragmentOrderDetails"
         android:label=""
         tools:layout="@layout/fragment_order_details" />
-
+    <fragment
+        android:id="@+id/fragmentcurrent"
+        android:name="com.apps.dount_branch.uis.activity_home.fragments_home_navigaion.FragmentCurrent"
+        android:label=""
+        tools:layout="@layout/fragment_home" />
 </navigation>

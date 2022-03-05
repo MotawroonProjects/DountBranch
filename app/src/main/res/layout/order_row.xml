@@ -60,7 +60,7 @@
                         android:layout_height="wrap_content"
 
                         android:padding="3dp"
-                        android:text='@{model.created_at.split(" ")[0]}'
+                        android:text='@{model.created_at.split("T")[0]}'
                         android:textColor="@color/black"
                         android:textSize="16sp"
 
@@ -243,17 +243,40 @@
                 <!--                        /></LinearLayout>-->
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        <Button
-            android:id="@+id/btnendorder"
-            android:layout_width="150dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded_primary"
-            android:text="@string/end_order"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:gravity="center"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnAccept"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_primary"
+                android:text='@{model.status.equals("accept")?@string/end_order:@string/accept}'
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+            <Button
+                android:id="@+id/btCancel"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/rounded_primary"
+                android:text="@string/cancel"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
 
     </LinearLayout>
 

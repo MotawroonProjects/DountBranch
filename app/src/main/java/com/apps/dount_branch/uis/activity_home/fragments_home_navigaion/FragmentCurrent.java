@@ -2,6 +2,9 @@ package com.apps.dount_branch.uis.activity_home.fragments_home_navigaion;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,17 +13,13 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.apps.dount_branch.R;
-
 import com.apps.dount_branch.adapter.CurrentOrderAdapter;
+import com.apps.dount_branch.databinding.FragmentHomeBinding;
 import com.apps.dount_branch.model.OrderModel;
+import com.apps.dount_branch.mvvm.FragmentCurrentMvvm;
 import com.apps.dount_branch.mvvm.FragmentHomeMvvm;
 import com.apps.dount_branch.uis.activity_base.BaseFragment;
-import com.apps.dount_branch.databinding.FragmentHomeBinding;
 import com.apps.dount_branch.uis.activity_home.HomeActivity;
 
 import java.util.ArrayList;
@@ -34,11 +33,11 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 
-public class FragmentHome extends BaseFragment {
-    private static final String TAG = FragmentHome.class.getName();
+public class FragmentCurrent extends BaseFragment {
+    private static final String TAG = FragmentCurrent.class.getName();
     private HomeActivity activity;
     private FragmentHomeBinding binding;
-    private FragmentHomeMvvm fragmentHomeMvvm;
+    private FragmentCurrentMvvm fragmentHomeMvvm;
     private CompositeDisposable disposable = new CompositeDisposable();
     private CurrentOrderAdapter adapter;
     private int adapterPos = -1;
@@ -89,7 +88,7 @@ public class FragmentHome extends BaseFragment {
 
     private void initView() {
 
-        fragmentHomeMvvm = ViewModelProviders.of(this).get(FragmentHomeMvvm.class);
+        fragmentHomeMvvm = ViewModelProviders.of(this).get(FragmentCurrentMvvm.class);
         fragmentHomeMvvm.getIsLoading().observe(this, isLoading -> {
             binding.swipeRefresh.setRefreshing(isLoading);
             if (isLoading) {
@@ -111,7 +110,7 @@ public class FragmentHome extends BaseFragment {
 
             }
         });
-        fragmentHomeMvvm.onAccept().observe(activity, success -> {
+        fragmentHomeMvvm.onEnded().observe(activity, success -> {
             if (success) {
                 if (adapterPos != -1) {
                     fragmentHomeMvvm.onOrderDataSuccess().getValue().remove(adapterPos);
@@ -170,8 +169,8 @@ public class FragmentHome extends BaseFragment {
         disposable.clear();
     }
 
-    public void accept(OrderModel orderModel, int adapterPosition) {
+    public void endorder(OrderModel orderModel, int adapterPosition) {
         this.adapterPos = adapterPosition;
-        fragmentHomeMvvm.acceptOrder(activity, getUserModel(), orderModel.getId());
+        fragmentHomeMvvm.endOrder(activity, getUserModel(), orderModel.getId());
     }
 }
