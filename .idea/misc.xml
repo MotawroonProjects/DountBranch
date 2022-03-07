@@ -3,23 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/DountBranch/app/src/main/res/layout/activity_home.xml" value="0.18518518518518517" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/activity_login.xml" value="0.14270833333333333" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/activity_sign_up.xml" value="0.14270833333333333" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/fragment_contact_us.xml" value="0.14270833333333333" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/fragment_home.xml" value="0.18518518518518517" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/fragment_previous_reservation.xml" value="0.18518518518518517" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/notification_row.xml" value="0.14270833333333333" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/order_row.xml" value="0.25" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/previous_order_row.xml" value="0.14270833333333333" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/product_row.xml" value="0.14270833333333333" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/step1_layout.xml" value="0.14270833333333333" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/step2_layout.xml" value="0.14270833333333333" />
-        <entry key="..\:/DountBranch/app/src/main/res/layout/step3_layout.xml" value="0.14270833333333333" />
-        <entry key="..\:/Users/Ahmed/AndroidStudioProjects/DountBranch/app/src/main/res/layout/activity_home.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/Ahmed/AndroidStudioProjects/DountBranch/app/src/main/res/layout/order_row.xml" value="0.2" />
-        <entry key="..\:/Users/Ahmed/AndroidStudioProjects/DountBranch/app/src/main/res/layout/previous_order_row.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/Ahmed/AndroidStudioProjects/DountBranch/app/src/main/res/layout/product_row.xml" value="0.13020833333333334" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/drawable/rounded_top_color2.xml" value="0.2203125" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/activity_login.xml" value="0.18796296296296297" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/bottom_sheet_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/filter_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/fragment_language.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/fragment_order_details.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/fragment_previous_reservation.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/notification_row.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/order_row.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/previous_order_row.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/Projects/DountBranch/app/src/main/res/layout/toolbar.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
