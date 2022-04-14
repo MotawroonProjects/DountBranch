@@ -198,7 +198,7 @@
                         android:layout_height="wrap_content"
 
                         android:padding="3dp"
-                        android:text='@{model.grand_total+""}'
+                        android:text='@{Math.round(Double.parseDouble(model.grand_total))+""}'
                         android:textColor="@color/colorAccent"
                         android:textSize="16sp"
 
